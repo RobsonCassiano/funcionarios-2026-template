@@ -16,12 +16,14 @@ function criarCard(funcionario) {
 
     cargo.textContent = funcionario.cargo
 
-    card.appendChild(foto, nome, cargo )
+    card.append(foto, nome, cargo)
     return card
 }
 
-const cards= funcionarios.map(criarCard)
-document.getElementById("container").append(...cards)
+const container = document.getElementById("container")
+const cards = funcionarios.map(criarCard)
+
+container.replaceChildren(...cards)
 
 
 
